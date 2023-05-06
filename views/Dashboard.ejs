@@ -8,15 +8,15 @@
 
 
 <body class="" style="background-color: blueviolet; font-family:  'Playfair Display', serif;;">
-    <style>
-      .hide{
-        display: none;
-      }
-    </style>
+
 
 
 
     <%- include('./partials/navbar.ejs') %>
+
+
+
+  
 
       <div class="container d-flex text-center  " style="align-items: center; justify-content:center "> 
         <div class="p-4 border bg-light  mt-5" style="max-width: 55rem;  width:100% ; border-radius:1rem" >
@@ -38,6 +38,23 @@
           <div class="Order-Detail hide mb-4">
             <div class="mt-2">
               <h2 class="mb2 ; margin top : 2">ITEM DETAIL </h2> 
+
+              <style>
+                .hide{
+                  display: none;
+                }
+                .selected{
+                color: blueviolet;
+                }
+
+              </style>
+
+              <a class="btn single-item " onclick="select('single-item')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+                <i class="fa-solid fa-box" style="font-size: 4rem;"></i>
+                <p class="m-0">Single Item</p>
+              </a>
+
+
               <input type="checkbox " class="btn-check " id="btn-check" autocomplete="off">
              <label class="btn btn-warning mx-2" for="btn-check">Single Item</label>
 
@@ -122,5 +139,18 @@
 
   }
 </script>
+
+<script>
+
+  function select(i) {
+    console.log(i);
+    document.querySelector('.'+i).classList.add('selected')
+
+  }
+
+</script>
+
+
+
 
 </html>
