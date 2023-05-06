@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+var con = require("./database.js");
 
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:false}))
@@ -49,7 +50,19 @@ app.get('/Dashboard', (  req , res) =>{
 
 app.post('/Dashboard' , ( req,res) => {
     console.log(req.body);
-    res.render("Order" , {Info:req.body})
+    user = JSON.stringify(req.oidc.user["nickname"], null, 2).replace(/"/g, "");
+    const {name ,contact , item , fragile ,big, vehicle , from , to ,plan} = req.body
+
+    con.query(
+        `INSERT INTO order ( name ,contact , item , fragile ,big, vehicle , from , to ,plan) VALUES ('${name}','${contact}' ,'${item}' ,'${fragile}','${big}' ,'${vehicle}','${from}','${to}','${plan}')`,
+        function (err, result, fields) {
+          if (err) {
+            console.log(err);
+          }
+          res.redirect('/' , {name : user  , isAuthenticated :req.oidc.isAuthenticated()})
+        }
+      );
+    
 })
 app.get('/Order',(req,res)  =>{
     res.render("Order")
