@@ -2,12 +2,20 @@
 <html lang="en">
 <%- include('./partials/header.ejs') %>
 
-  <body class="" style="background-color: blueviolet;">
+  
+
+
+
+
+<body class="" style="background-color: blueviolet; font-family:  'Playfair Display', serif;;">
     <style>
       .hide{
         display: none;
       }
     </style>
+
+
+
     <%- include('./partials/navbar.ejs') %>
 
       <div class="container d-flex text-center  " style="align-items: center; justify-content:center "> 
@@ -16,7 +24,7 @@
          
 
         <form>
-          <div class="detail">
+          <div class="detail ;border radius : 2rem">
           <div class="mb-3">
             <input placeholder="Name" type="text" class="form-control" id="exampleInputEmail1"
               aria-describedby="emailHelp">
@@ -29,7 +37,7 @@
         </div>
           <div class="Order-Detail hide mb-4">
             <div class="mt-2">
-              <h2 class="mb2">ITEM DETAIL</h2>
+              <h2 class="mb2 ; margin top : 2">ITEM DETAIL </h2> 
               <input type="checkbox " class="btn-check " id="btn-check" autocomplete="off">
              <label class="btn btn-warning mx-2" for="btn-check">Single Item</label>
 
@@ -50,7 +58,7 @@
              <input type="checkbox" class="btn-check" id="More Than 2BHK" autocomplete="off">
              <label class="btn btn-warning mx-2" for="More Than 2BHK">More Than 2BHK</label>
 
-             <h2 class="mb2">ITEM TYPE</h2>
+             <h2 class="mb2 ;line height :0.4">ITEM TYPE</h2>
              <label for="Fragile" class="form-label">Number of Fragile Item</label>
              <input  type="number" class="form-control" id="Fragile"
               aria-describedby="emailHelp">
@@ -60,17 +68,27 @@
             <label for="Big" class="form-label">Number of Big Item</label>
             <input  type="number" class="form-control" id="Big">
 
-            <h2 class="mb2">RECOMMENDED VEHICLE</h2>
+             <h2 class="mb2 , border radius : 2rem">RECOMMENDED VEHICLE</h2>
+            
               <input type="checkbox " class="btn-check " id="Truck" autocomplete="off">
              <label class="btn btn-warning mx-2" for="Truck">Truck</label>
 
-
              <input type="checkbox" class="btn-check" id="Tempo" autocomplete="off">
-             <label class="btn btn-warning mx-2" for="Tempo">Tempo</label>
+             <label class="btn btn-warning mx-2" for="Tempo"">Tempo</label>
 
 
              <input type="checkbox" class="btn-check" id="Auto" autocomplete="off">
              <label class="btn btn-warning mx-2" for="Auto">Auto</label>
+
+             <h2 class="mb2">TOTAL COST</h2>
+            
+              <input type="checkbox " class="btn-check " id="Personalized" autocomplete="off">
+             <label class="btn btn-warning mx-2" for="Personalized">Personalized</label>
+
+             <input type="checkbox" class="btn-check" id="Sharing" autocomplete="off">
+             <label class="btn btn-warning mx-2" for="Sharing"">Sharing</label>
+
+             
           
           
 
