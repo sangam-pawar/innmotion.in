@@ -8,17 +8,26 @@
   
     <div class="container text-center m-auto text-light vh-100 d-grid justify-content-center" style="align-items: center;"   >
         <div style="align-items: center;">
-
+            <p> <%= locals.name %></p>
             <img src="innmotion.png" alt="" srcset="" style="max-width: 20rem;">
             <h1 style="font-family: 'Righteous', cursive; font-size: 7rem ">INNMOTION</h1>
 
             <p class="p-0 text-dark" style="font-size: 2rem; font-family: 'Righteous', cursive; ">Every Motion Is Possible With</p>
-            <a href="/Dashboard" class="btn btn-light mt-2 px-5 shadow" style=" font-size: 2rem;
+           
+            <% if (isAuthenticated) { %>
+                <a href="/Dashboard" class="btn btn-light mt-2 px-5 shadow" style=" font-size: 2rem;
+                border: none;
+                border-radius: 2rem;
+                font-family: 'Righteous', cursive;
+                font-family: 'Teko', sans-serif;" > Let's Move</a>
+            <% } else { %>
+            
+           <a href="/login" class="btn btn-light mt-2 px-5 shadow" style=" font-size: 2rem;
             border: none;
             border-radius: 2rem;
             font-family: 'Righteous', cursive;
             font-family: 'Teko', sans-serif;" > Let's Move</a>
-
+            <% } %>
         </div>
 
     </div>
