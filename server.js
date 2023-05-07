@@ -33,9 +33,9 @@ app.get("/", (req,res) => {
     
     user = JSON.stringify(req.oidc.user["nickname"], null, 2).replace(/"/g, "");
     res.render("Home", {name : user  , isAuthenticated :req.oidc.isAuthenticated()} )
-}
+}else{
 res.render("Home", {isAuthenticated :req.oidc.isAuthenticated()}  )
-
+}
     
 })
 
@@ -54,12 +54,12 @@ app.post('/Dashboard' , ( req,res) => {
     const {name ,contact , item , fragile ,big, vehicle , from , to ,plan} = req.body
 
     con.query(
-        `INSERT INTO order ( name ,contact , item , fragile ,big, vehicle , from , to ,plan) VALUES ('${name}','${contact}' ,'${item}' ,'${fragile}','${big}' ,'${vehicle}','${from}','${to}','${plan}')`,
+        `INSERT INTO orders ( name ,contact , item , fragile ,big, vehicle , destination , droppoint ,plan) VALUES ('${name}','${contact}' ,'${item}' ,'${fragile}','${big}' ,'${vehicle}','${from}','${to}','${plan}')`,
         function (err, result, fields) {
           if (err) {
             console.log(err);
           }
-          res.redirect('/' , {name : user  , isAuthenticated :req.oidc.isAuthenticated()})
+          res.redirect('/')
         }
       );
     
