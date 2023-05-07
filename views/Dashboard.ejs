@@ -20,20 +20,20 @@
 
 
 
-<form>
+
 
   <div class="container d-flex text-center  " style="align-items: center; justify-content:center ">
     <div class="p-4 border bg-light  mt-5" style="max-width: 55rem;  width:100% ; border-radius:1rem">
       <p class=" text-dark fw-bold" style="text-align: center; font-size: 1.5rem ; "> Details</p>
 
 
-      <form  method="POST" action="/Dashboard">
+      <form method="POST" action="/Dashboard">
 
         <div class="Detail">
           <div class="">
             <div class="mb-3">
-              
-             <input placeholder="Name" name="name" required type="text" oninvalid="this.setCustomValidity('name ?')" oninput="this.setCustomValidity('')" class="form-control" id="name" >
+
+              <input placeholder="Name" name="name" required type="text" oninvalid="this.setCustomValidity('name ?')" oninput="this.setCustomValidity('')" class="form-control" id="name">
 
 
             </div>
@@ -48,174 +48,172 @@
 
           </div>
           <div class="text-center">
-            <button  onclick="validate()" type="button" class="btn btn-primary  px-5 fw-bold  "  style="border-radius: 5rem;"> Next</button>
+            <button onclick="validate()" type="button" class="btn btn-primary  px-5 fw-bold  " style="border-radius: 5rem;"> Next</button>
           </div>
         </div>
-      </form>
+      
 
-        <!-- form divs -->
+      <!-- form divs -->
 
-        <div class="Order-Detail hide mb-4">
-          <div class="mt-2">
-            <h2 class="mb2 ; margin top : 2">ITEM DETAIL </h2>
+      <div class="Order-Detail hide mb-4">
+        <div class="mt-2">
+          <h2 class="mb2 ; margin top : 2">ITEM DETAIL </h2>
 
-            <input type="hidden" value="single-item" name="item "  id="item" class="item-detail-input" >
+          <input type="hidden" name="item " id="item" class="item-detail-input">
 
-            <div class="mb-3">
+          <div class="mb-3">
 
-              <a class="btn single-item  m-2" onclick="select('single-item')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-box" style="font-size: 4rem;"></i>
-                <p class="m-0">Single Item</p>
-              </a>
+            <a class="btn single-item  m-2" onclick="select('single-item')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-box" style="font-size: 4rem;"></i>
+              <p class="m-0">Single Item</p>
+            </a>
 
-              <a class="btn morethan-one m-2" onclick="select('morethan-one')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-boxes-stacked " style="font-size: 4rem;"></i>
-                <p class="m-0">More Than 1</p>
-              </a>
+            <a class="btn morethan-one m-2" onclick="select('morethan-one')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-boxes-stacked " style="font-size: 4rem;"></i>
+              <p class="m-0">More Than 1</p>
+            </a>
 
-              <a class="btn single-room m-2 " onclick="select('single-room')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-bed" style="font-size: 4rem;"></i>
-                <p class="m-0">Single Room</p>
-              </a>
-            </div>
-
-
-            <div>
-              <a class="btn bhk m-2" onclick="select('bhk')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-house" style="font-size: 4rem;"></i>
-                <p class="m-0">1 BHK</p>
-              </a>
-
-              <a class="btn two-bhk px-4 m-2" onclick="select('two-bhk')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-building" style="font-size: 4rem;"></i>
-                <p class="m-0">2 BHK</p>
-              </a>
-
-              <a class="btn more m-2 " onclick="select('more')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-                <i class="fa-solid fa-city" style="font-size: 4rem;"></i>
-                <p class="m-0">3 BHK OR MORE</p>
-              </a>
-            </div>
+            <a class="btn single-room m-2 " onclick="select('single-room')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-bed" style="font-size: 4rem;"></i>
+              <p class="m-0">Single Room</p>
+            </a>
           </div>
 
-          <div class="text-center">
-            <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatetwo()" style="border-radius: 5rem;"> Next</button>
+
+          <div>
+            <a class="btn bhk m-2" onclick="select('bhk')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-house" style="font-size: 4rem;"></i>
+              <p class="m-0">1 BHK</p>
+            </a>
+
+            <a class="btn two-bhk px-4 m-2" onclick="select('two-bhk')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-building" style="font-size: 4rem;"></i>
+              <p class="m-0">2 BHK</p>
+            </a>
+
+            <a class="btn more m-2 " onclick="select('more')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+              <i class="fa-solid fa-city" style="font-size: 4rem;"></i>
+              <p class="m-0">3 BHK OR MORE</p>
+            </a>
           </div>
         </div>
 
+        <div class="text-center">
+          <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatetwo()" style="border-radius: 5rem;"> Next</button>
+        </div>
+      </div>
 
 
-        <div class="Item-Type hide">
-          <div class="text-center d-grid" style="justify-content: center;">
-            <h2 class=" ">ITEM TYPE</h2>
 
+      <div class="Item-Type hide">
+        <div class="text-center d-grid" style="justify-content: center;">
+          <h2 class=" ">ITEM TYPE</h2>
+
+          <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
+            <i class="fa-solid fa-wine-glass " style="font-size: 3rem;"></i><br>
+            <label for="Fragile" class="form-label ">Number of Fragile Item</label>
+            <input type="number" class="form-control" min="1" name="fragile" id="fragile" aria-describedby="emailHelp">
+          </div>
+
+
+          <div class="mb-3 mt-2">
             <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
-              <i class="fa-solid fa-wine-glass " style="font-size: 3rem;"></i><br>
-              <label for="Fragile" class="form-label ">Number of Fragile Item</label>
-              <input type="number" class="form-control" min="1" name="fragile" id="fragile" aria-describedby="emailHelp">
+
+              <i class="fa-solid fa-couch" style="font-size: 3rem;"></i><br>
+
+              <label for="Big" class="form-label">Number of Big Item</label>
+              <input type="number" class="form-control" min="1" name="big" id="big">
             </div>
-
-
-            <div class="mb-3 mt-2">
-              <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
-
-                <i class="fa-solid fa-couch" style="font-size: 3rem;"></i><br>
-
-                <label for="Big" class="form-label">Number of Big Item</label>
-                <input type="number" class="form-control" min="1" name="big" id="big">
-              </div>
-            </div>
-
           </div>
+
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-primary  px-5 fw-bold  " onclick="validatethree()" style="border-radius: 5rem;"> Next</button>
+        </div>
+      </div>
+
+
+
+
+      <div class="Available-Vehicle hide">
+
+        <h2 class="mb2 ">AVAILABLE VEHICLE</h2>
+        <input type="hidden" name="vehicle" id="vehicle" class="vehicle-input">
+        <a class="btn truck  m-2" onclick="selectVehicle('truck')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+          <i class="fa-solid fa-truck" style="font-size: 4rem;"></i>
+          <p class="m-0">Truck</p>
+        </a>
+
+        <a class="btn tempo  m-2" onclick="selectVehicle('tempo')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+          <i class="fa-solid fa-truck-pickup" style="font-size: 4rem;"></i>
+          <p class="m-0">Tempo</p>
+        </a>
+
+        <a class="btn auto  m-2" onclick="selectVehicle('auto')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+          <i class="fa-solid fa-caravan" style="font-size: 4rem;"></i>
+          <p class="m-0">Auto</p>
+        </a>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatefour()" style="border-radius: 5rem;"> Next</button>
+        </div>
+      </div>
+
+
+      <div class="Pickup-Drop hide">
+        <div class="text-center d-grid" style="justify-content: center;">
+          <h2 class="mb2">PICKUP TO DROP</h2>
+
+          <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
+            <i class="fa-solid fa-location-crosshairs" style="font-size: 3rem;"></i><br>
+            <label for="Fragile" class="form-label ">Enter Pickup Location</label>
+            <input type="text" class="form-control" name="from" id="pickup">
+          </div>
+
+          <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
+            <i class="fa-solid fa-location-dot" style="font-size: 3rem;"></i><br>
+            <label for="Fragile" class="form-label ">Enter Drop Location</label>
+            <input type="text" class="form-control" name="to" id="drop">
+          </div>
+
+          <label for="customRange1" class="form-label">Example range</label>
+          <input type="range" class="form-range" id="customRange1">
+
+
           <div class="text-center">
-            <button type="button" class="btn btn-primary  px-5 fw-bold  " onclick="validatethree()" style="border-radius: 5rem;"> Next</button>
+            <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatefive()" style="border-radius: 5rem;"> Next</button>
           </div>
-        </div>
 
 
-
-
-        <div class="Available-Vehicle hide">
-
-          <h2 class="mb2 ">AVAILABLE VEHICLE</h2>
-            <input type="hidden" name="vehicle" id="vehicle" value="auto"class="vehicle-input">
-          <a class="btn truck  m-2" onclick="selectVehicle('truck')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-            <i class="fa-solid fa-truck" style="font-size: 4rem;"></i>
-            <p class="m-0">Truck</p>
-          </a>
-
-          <a class="btn tempo  m-2" onclick="selectVehicle('tempo')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-            <i class="fa-solid fa-truck-pickup" style="font-size: 4rem;"></i>
-            <p class="m-0">Tempo</p>
-          </a>
-
-          <a class="btn auto  m-2" onclick="selectVehicle('auto')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-            <i class="fa-solid fa-caravan" style="font-size: 4rem;"></i>
-            <p class="m-0">Auto</p>
-          </a>
-
-          <div class="text-center">
-            <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatefour()" style="border-radius: 5rem;"> Next</button>
-          </div>
-        </div>
-
-        
-        <div class="Pickup-Drop hide">
-          <div class="text-center d-grid" style="justify-content: center;">
-            <h2 class="mb2">PICKUP TO DROP</h2>
-
-            <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
-              <i class="fa-solid fa-location-crosshairs" style="font-size: 3rem;"></i><br>
-              <label for="Fragile" class="form-label ">Enter Pickup Location</label>
-              <input type="text" class="form-control" name="from"  id="pickup" >
-            </div>
-
-            <div class=" p-2 m-2" style="width: fit-content; border: 2px blueviolet solid; border-radius: 1rem; ">
-              <i class="fa-solid fa-location-dot" style="font-size: 3rem;"></i><br>
-              <label for="Fragile" class="form-label ">Enter Drop Location</label>
-              <input type="text" class="form-control" name="to"  id="drop" >
-            </div>
-
-            <label for="customRange1" class="form-label">Example range</label>
-            <input type="range" class="form-range" id="customRange1">
-
-
-            <div class="text-center">
-              <button type="button" class="btn btn-primary  px-5 fw-bold " onclick="validatefive()" style="border-radius: 5rem;"> Next</button>
-            </div>
-
-     
-
-          </div>
 
         </div>
 
+      </div>
 
 
-        <div class="Total-Cost hide">
-          <h2 class="mb2">TOTAL COST</h2>
-          <input type="hidden" name="plan" class="plan-input" value="sharing">
 
-          <a class="btn personalized  m-2" onclick="selectPlan('personalized')" style="border-radius: 1rem; border: 2px gold solid;">
-            <i class="fa-sharp fa-solid fa-crown" style="font-size: 4rem; color: gold;"></i>
-            <p class="m-0">Personalized</p>
-          </a>
+      <div class="Total-Cost hide">
+        <h2 class="mb2">TOTAL COST</h2>
+        <input type="hidden" name="plan" class="plan-input" value="sharing" required>
 
-          <a class="btn sharing  m-2" onclick="selectPlan('sharing')" style="border-radius: 1rem; border: 2px blueviolet solid;">
-            <i class="fa-solid fa-user-group" style="font-size: 4rem; "></i>
-            <p class="m-0">Sharing</p>
-          </a>
+        <a class="btn personalized  m-2" onclick="selectPlan('personalized')" style="border-radius: 1rem; border: 2px gold solid;">
+          <i class="fa-sharp fa-solid fa-crown" style="font-size: 4rem; color: gold;"></i>
+          <p class="m-0">Personalized</p>
+        </a>
 
-       
+        <a class="btn sharing  m-2" onclick="selectPlan('sharing')" style="border-radius: 1rem; border: 2px blueviolet solid;">
+          <i class="fa-solid fa-user-group" style="font-size: 4rem; "></i>
+          <p class="m-0">Sharing</p>
+        </a>
 
-           
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary  px-5 fw-bold " style="border-radius: 5rem;"> Submit</button>
-          </div>
 
+
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary  px-5 fw-bold " style="border-radius: 5rem;"> Submit</button>
         </div>
 
-     
+      </div>
 
 
 
@@ -238,124 +236,105 @@
   .unselected {
     color: rgb(0, 0, 0);
   }
-
-
-
-
 </style>
 
 
 
-<script >
+<script>
   /**/
-  function validate()
-  {
+  function validate() {
     var name = document.getElementById('name');
     var contact = document.getElementById('contact');
     var email = document.getElementById('email');
-     
-    if(name.value =="" ||contact.value =="" ||email.value =="" )
 
-  {
-    alert("No blank values allowed");
-
-  }
-
-  else
-  {
-    one()
-  }
-
-
-  }
-
-
-  function validatetwo(){
-    var item = document.getElementById('item');
-
-    if(!item.value)
+    if (name.value == "" || contact.value == "" || email.value == "")
 
     {
       alert("No blank values allowed");
-  
+
+    } else {
+      one()
     }
-  
-    else
-    {
-      two()
-    }
-  
-  
+
 
   }
 
-  
-  function validatethree(){
+
+  function validatetwo() {
+    console.log('two');
+    var item = document.getElementById('item');
+
+    if (!item.value)
+
+    {
+      alert("No blank values allowed");
+
+    } else {
+      two()
+    }
+
+
+
+  }
+
+
+  function validatethree() {
     var fragile = document.getElementById('fragile');
     var big = document.getElementById('big');
 
-  
 
-    if(!fragile.value  || !big.value)
+
+    if (!fragile.value || !big.value)
 
     {
       alert("No blank values allowed");
-  
-    }
-  
-    else
-    {
+
+    } else {
       three()
     }
-  
-  
+
+
 
   }
 
 
-  function validatefour(){
+  function validatefour() {
     var vehicle = document.getElementById('vehicle');
-  
-  
 
-    if(!vehicle.value)
+
+
+    if (!vehicle.value)
 
     {
       alert("No blank values allowed");
-  
-    }
-  
-    else
-    {
+
+    } else {
       four()
     }
-  
-  
+
+
 
   }
 
-  function validatefive(){
+  function validatefive() {
     var vehicle = document.getElementById('pickup');
     var vehicle = document.getElementById('drop');
-  
-  
 
-    if(!vehicle.value)
+
+
+    if (!vehicle.value)
 
     {
       alert("No blank values allowed");
-  
-    }
-  
-    else
-    {
+
+    } else {
       five()
     }
-  
-  
+
+
 
   }
- 
+
 
   function one() {
     document.querySelector('.Order-Detail').classList.remove('hide')
@@ -391,38 +370,37 @@
 <script>
   function select(i) {
 
-    op1=document.querySelector('.single-item')
-    op2=document.querySelector('.morethan-one')
-    op3=document.querySelector('.single-room')
-    op4=document.querySelector('.bhk')
-    op5=document.querySelector('.two-bhk')
-    op6=document.querySelector('.more')
+    op1 = document.querySelector('.single-item')
+    op2 = document.querySelector('.morethan-one')
+    op3 = document.querySelector('.single-room')
+    op4 = document.querySelector('.bhk')
+    op5 = document.querySelector('.two-bhk')
+    op6 = document.querySelector('.more')
     input = document.querySelector('.item-detail-input')
 
 
-    options = [op1,op2,op3,op4,op5,op6]
+    options = [op1, op2, op3, op4, op5, op6]
 
 
     console.log(i);
-    el = document.querySelector('.'+i)
+    el = document.querySelector('.' + i)
     options.forEach(element => {
 
-        if (el === element) {
-       
-          
-          document.querySelector('.' + i).classList.remove('unselected')
-          document.querySelector('.' + i).classList.add('selected')
-          input.value = i
+      if (el === element) {
 
 
-          console.log(input.value);
-          
-          
+        document.querySelector('.' + i).classList.remove('unselected')
+        document.querySelector('.' + i).classList.add('selected')
+        input.value = i
 
-        }
-        else{
-          element.classList.add('unselected')
-        }
+
+        console.log(input.value);
+
+
+
+      } else {
+        element.classList.add('unselected')
+      }
 
     });
 
@@ -431,83 +409,81 @@
 </script>
 
 <script>
-    function selectVehicle(i) {
+  function selectVehicle(i) {
 
-op1=document.querySelector('.truck')
-op2=document.querySelector('.tempo')
-op3=document.querySelector('.auto')
+    op1 = document.querySelector('.truck')
+    op2 = document.querySelector('.tempo')
+    op3 = document.querySelector('.auto')
 
-input = document.querySelector('.vehicle-input')
-
-
-options = [op1,op2,op3]
+    input = document.querySelector('.vehicle-input')
 
 
-console.log(i);
-el = document.querySelector('.'+i)
-options.forEach(element => {
-
-    if (el === element) {
-   
-      
-      document.querySelector('.' + i).classList.remove('unselected')
-      document.querySelector('.' + i).classList.add('selected')
-      input.value = i
+    options = [op1, op2, op3]
 
 
-      console.log(input.value);
-      
-      
+    console.log(i);
+    el = document.querySelector('.' + i)
+    options.forEach(element => {
 
-    }
-    else{
-      element.classList.add('unselected')
-    }
-
-});
+      if (el === element) {
 
 
-}
+        document.querySelector('.' + i).classList.remove('unselected')
+        document.querySelector('.' + i).classList.add('selected')
+        input.value = i
+
+
+        console.log(input.value);
+
+
+
+      } else {
+        element.classList.add('unselected')
+      }
+
+    });
+
+
+  }
 </script>
 
 <script>
-   function selectPlan(i) {
+  function selectPlan(i) {
 
-op1=document.querySelector('.personalized')
-op2=document.querySelector('.sharing')
-
-
-input = document.querySelector('.plan-input')
+    op1 = document.querySelector('.personalized')
+    op2 = document.querySelector('.sharing')
 
 
-options = [op1,op2]
+    input = document.querySelector('.plan-input')
 
 
-console.log(i);
-el = document.querySelector('.'+i)
-options.forEach(element => {
-
-    if (el === element) {
-   
-      
-      document.querySelector('.' + i).classList.remove('unselected')
-      document.querySelector('.' + i).classList.add('selected')
-      input.value = i
+    options = [op1, op2]
 
 
-      console.log(input.value);
-      
-      
+    console.log(i);
+    el = document.querySelector('.' + i)
+    options.forEach(element => {
 
-    }
-    else{
-      element.classList.add('unselected')
-    }
-
-});
+      if (el === element) {
 
 
-}
+        document.querySelector('.' + i).classList.remove('unselected')
+        document.querySelector('.' + i).classList.add('selected')
+        input.value = i
+
+
+        console.log(input.value);
+
+
+
+      } else {
+        element.classList.add('unselected')
+      }
+
+    });
+
+
+  }
 </script>
 
 
