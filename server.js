@@ -51,15 +51,15 @@ app.get('/Dashboard', (  req , res) =>{
 app.post('/Dashboard' , ( req,res) => {
     console.log(req.body);
     user = JSON.stringify(req.oidc.user["nickname"], null, 2).replace(/"/g, "");
-    const {name ,contact , item , fragile ,big, vehicle , from , to ,plan} = req.body
+    const {name ,contact ,email, item , fragile ,big, vehicle , from , to ,plan} = req.body
 
     con.query(
-        `INSERT INTO orders ( name ,contact , item , fragile ,big, vehicle , destination , droppoint ,plan) VALUES ('${name}','${contact}' ,'${item}' ,'${fragile}','${big}' ,'${vehicle}','${from}','${to}','${plan}')`,
+        `INSERT INTO orders ( name ,contact ,email, item , fragile ,big, vehicle , destination , droppoint ,plan) VALUES ('${name}','${contact}' , '${email}', '${item}' ,'${fragile}','${big}' ,'${vehicle}','${from}','${to}','${plan}')`,
         function (err, result, fields) {
           if (err) {
             console.log(err);
           }
-          res.redirect('/')
+          res.render("Order",{info:req.body})
         }
       );
     
