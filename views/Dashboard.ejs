@@ -177,7 +177,16 @@
           </div>
 
           <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" class="form-range" id="customRange1">
+          <input type="range" class="form-range" id="slider"> 
+          <span id="display">0</span>
+
+          <script>
+            slider.value = 0;
+
+            setInterval( ( )  => {
+              slider.value++;
+              display.innerText = slider.value;} , 100);
+          </script>
 
 
           <div class="text-center">
