@@ -16,7 +16,7 @@
 
 
 
-  <%- include('./partials/navbar.ejs') %>
+  <%- include('./partials/navbar.ejs' , {isAuthenticated:isAuthenticated}) %>
 
 
 
@@ -176,16 +176,21 @@
             <input type="text" class="form-control" name="to" id="drop">
           </div>
 
-          <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" onchange="slide()" step="0.5" class="form-range" id="slider"> 
-          <span id="display">0</span>
+          <label for="customRange1" class="form-label">Distance</label>
+          <input type="range" onfocus="slide()" name="distance" step="0.5" class="form-range" id="slider"> 
+          <span id="display">0</span><p>km</p>
 
           <script>
            
 
-            function slide(){
-              document.getElementById('display').innerText =  document.getElementById('slider').value +'km';
+            const slider = document.getElementById("slider");
+            const output = document.getElementById("display");
+            output.innerHTML = slider.value;
+            
+            slider.oninput = function() {
+              output.innerHTML = this.value;
             }
+            
 
            
           </script>
