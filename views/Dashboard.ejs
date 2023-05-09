@@ -160,7 +160,7 @@
       </div>
 
 
-      <div class="Pickup-Drop hide">
+      <div class="Pickup-Drop hide ">
         <div class="text-center d-grid" style="justify-content: center;">
           <h2 class="mb2">PICKUP TO DROP</h2>
 
@@ -177,15 +177,17 @@
           </div>
 
           <label for="customRange1" class="form-label">Example range</label>
-          <input type="range" class="form-range" id="slider"> 
+          <input type="range" onchange="slide()" step="0.5" class="form-range" id="slider"> 
           <span id="display">0</span>
 
           <script>
-            slider.value = 0;
+           
 
-            setInterval( ( )  => {
-              slider.value++;
-              display.innerText = slider.value;} , 100);
+            function slide(){
+              document.getElementById('display').innerText =  document.getElementById('slider').value +'km';
+            }
+
+           
           </script>
 
 
