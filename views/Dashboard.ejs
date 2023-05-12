@@ -33,17 +33,24 @@
           <div class="">
             <div class="mb-3">
 
-              <input placeholder="Name" name="name" required type="text" oninvalid="this.setCustomValidity('name ?')" oninput="this.setCustomValidity('')" class="form-control" id="name">
-
+              <input placeholder="Name" name="name" required type="text" oninvalid="this.setCustomValidity('name ?')" oninput="this.setCustomValidity('')" class="form-control " id="name">
+              <div class="hide name-valid" style="border: 1px red solid; border-radius: 0.2rem; ">
+                <h6 class="text-danger" >Please choose a username.</h6>
+              </div>
 
             </div>
             <div class="mb-3 mt-2">
               <input placeholder="Contact" name="contact" required type="tel" class="form-control" id="contact">
+              <div class="hide contact-valid" style="border: 1px red solid; border-radius: 0.2rem; ">
+                <h6 class="text-danger" >Please choose a contact.</h6>
+              </div>
             </div>
 
             <div class="mb-3 mt-2">
               <input placeholder="Email Address" name="email" required type="email" class="form-control" id="email">
-
+              <div class="hide mail-valid" style="border: 1px red solid; border-radius: 0.2rem; ">
+                <h6 class="text-danger" >Please choose a email.</h6>
+              </div>
             </div>
 
           </div>
@@ -263,10 +270,26 @@
     var contact = document.getElementById('contact');
     var email = document.getElementById('email');
 
-    if (name.value == "" || contact.value == "" || email.value == "")
+
+    if (name.value == "") {
+      document.querySelector('.name-valid').classList.remove('hide')
+
+    }
+    else if (contact.value == "") {
+      document.querySelector('.contact-valid').classList.remove('hide')
+
+    }
+    else if (email.value == "") {
+      document.querySelector('.mail-valid').classList.remove('hide')
+
+    }
+    else if (name.value == "" || contact.value == "" || email.value == "")
 
     {
-      alert("No blank values allowed");
+      document.querySelector('.name-valid').classList.remove('hide')
+      document.querySelector('.contact-valid').classList.remove('hide')
+      document.querySelector('.mail-valid').classList.remove('hide')
+      
 
     } else {
       one()
@@ -501,6 +524,7 @@
 
   }
 </script>
+
 
 
 </html>
