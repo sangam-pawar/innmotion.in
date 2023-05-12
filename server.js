@@ -111,10 +111,7 @@ app.post('/Dashboard' , ( req,res) => {
 app.get('/Order',(req,res)  =>{
 
 
-    const truckcost = 11;
-    const tempocost = 4.4;
-    const autocost = 3.3;
-    
+   
     userid = JSON.stringify(req.oidc.user["sub"], null, 2).replace(/"/g, "");
 
     con.query(
@@ -124,13 +121,7 @@ app.get('/Order',(req,res)  =>{
           console.log(err);
         }
         console.log(result);
-        cost = 0;
-        console.log(result.vehicle + "this");
-        if (result.vehicle === 'truck') {
-          
-          cost = (parseInt(truckcost)*parseInt(result.distance))+80+50
-          console.log(cost);
-        }
+       
 
         
         res.render("Order",{info:req.body  ,isAuthenticated:req.oidc.isAuthenticated()})
