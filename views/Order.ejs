@@ -14,7 +14,7 @@
         <div class="container mb-5 mt-3">
           <div class="row d-flex align-items-baseline bg-light" >
             <div class="col-xl-9">
-              <p style="color: #000000;font-size: 20px;">Invoice >> <strong> ID</strong></p>
+              <p style="color: #000000;font-size: 20px;">Invoice >> <strong> <%= info.userid %></strong></p>
             </div>
             <div class="col-xl-3 float-end">
               <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark"><i
@@ -40,17 +40,16 @@
               <div class="col-xl-8">
                 <ul class="list-unstyled">
                   
-                  <li class="text-muted">To: <span style="color:#5d9fc5 ;">John Lorem</span></li>
-                  <li class="text-muted">Street, City</li>
-                  <li class="text-muted">State, Country</li>
-                  <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+                  <li class="text-muted">To: <span style="color:#5d9fc5 ;"><%= info.name %></span></li>
+                  <li class="text-muted"><%= info.email %></li>
+                  <li class="text-muted"><i class="fas fa-phone"></i> <%= info.contact %></li>
                 </ul>
               </div>
               <div class="col-xl-4">
                 <p class="text-muted">Invoice</p>
                 <ul class="list-unstyled">
                   <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                      class="fw-bold">ID:</span>#123-456</li>
+                      class="fw-bold">ID:</span><%= info.userid %></li>
                   <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
                       class="fw-bold">Creation Date: </span>Jun 23,2021</li>
                   <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
@@ -76,12 +75,12 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>Pro Package</td>
-                    <td>4</td>
-                    <td>$200</td>
-                    <td>$200</td>
-                    <td>$200</td>
-                    <td>$800</td>
+                    <td><%= info.name %></td>
+                    <td><%= info.contact %></td>
+                    <td><%= info.vehicle %></td>
+                    <td><%= info.distance %></td>
+                    <td><%= info.from %></td>
+                    <td><%= info.to %></td>
                   </tr>
                   
                 </tbody>
@@ -104,7 +103,7 @@
                 </div>
                 <div>
                   
-                  <li class="text-muted ms-3 ">$1110</li>
+                  <li class="text-muted ms-3 "> ₹<%= cost %></li>
                   <li class="text-muted ms-3 mt-2"> $111</li>
                   <li class="text-muted ms-3 mt-2">$45</li>
                 </div>
