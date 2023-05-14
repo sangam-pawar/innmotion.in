@@ -2,18 +2,24 @@ const express = require("express")
 const app = express()
 var con = require("./database.js");
 var {model , tf ,xsTensor , ysTensor} = require("./model.js");
+var isWin = process.platform === "win32";
+
+var baseurl = 'http://localhost:3000'
 
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"));
 
 const { auth } = require('express-openid-connect');
-
+if (!isWin) {
+  baseurl = 'https://innmotion.in'
+  
+}
 const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:3000',
+  baseURL: baseurl,
   clientID: 'YogA8hppjtG7AkABVRpDjyLyyEhgoF5O',
   issuerBaseURL: 'https://dev-t42orpastoaad3st.us.auth0.com'
 };
