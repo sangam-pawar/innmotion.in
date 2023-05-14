@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 var con = require("./database.js");
+var {model , tf ,xsTensor , ysTensor} = require("./model.js");
 
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:false}))
@@ -80,30 +81,58 @@ app.post('/Dashboard' , ( req,res) => {
         console.log(result[0].vehicle + "this");
         if (result[0].vehicle === 'truck') {
           
-          cost = (parseFloat(truckcost)*parseFloat(result[0].distance))+80 +50
+
+          model.fit(xsTensor, ysTensor, {epochs: 1000}).then(async() => {
+            const prediction = model.predict(tf.tensor2d([[(result[0].distance - 100) / 50, (truckcost - 3) / 1.5]])); 
+            price = prediction.dataSync()[0] * 100 + 200;
+            console.log('Predicted price:', price);
+
+            cost = price
+            res.render("Order",{info:req.body  ,isAuthenticated:req.oidc.isAuthenticated(),cost:cost})
+
+          });
+          // cost = (parseFloat(truckcost)*parseFloat(result[0].distance))+80 +50
 
           
-          console.log(cost);
+          // console.log(cost);
         }
 
         if (result[0].vehicle === 'tempo') {
+          model.fit(xsTensor, ysTensor, {epochs: 1000}).then(async() => {
+            const prediction = model.predict(tf.tensor2d([[(result[0].distance - 100) / 50, (tempocost - 3) / 1.5]])); 
+            price = prediction.dataSync()[0] * 100 + 200;
+            console.log('Predicted price:', price);
+
+            cost = price
+            res.render("Order",{info:req.body  ,isAuthenticated:req.oidc.isAuthenticated(),cost:cost})
+
+          });
           
-          cost = (parseFloat(tempocost)*parseFloat(result[0].distance))+80 +50
+          // cost = (parseFloat(tempocost)*parseFloat(result[0].distance))+80 +50
           
           
-          console.log(cost);
+          // console.log(cost);
         }
 
         if (result[0].vehicle === 'auto') {
           
-          cost = (parseFloat(autocost)*parseFloat(result[0].distance))+80 +50
+          model.fit(xsTensor, ysTensor, {epochs: 1000}).then(async() => {
+            const prediction = model.predict(tf.tensor2d([[(result[0].distance - 100) / 50, (autocost - 3) / 1.5]])); 
+            price = prediction.dataSync()[0] * 100 + 200;
+            console.log('Predicted price:', price);
+
+            cost = price
+            res.render("Order",{info:req.body  ,isAuthenticated:req.oidc.isAuthenticated(),cost:cost})
+
+          });
+
+          // cost = (parseFloat(autocost)*parseFloat(result[0].distance))+80 +50
           
           
-          console.log(cost);
+          // console.log(cost);
         }
 
         
-         res.render("Order",{info:req.body  ,isAuthenticated:req.oidc.isAuthenticated(),cost:cost})
       }
     );
     
